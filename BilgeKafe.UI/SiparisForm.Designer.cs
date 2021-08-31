@@ -51,9 +51,19 @@ namespace BilgeKafe.UI
             // nudAdet
             // 
             this.nudAdet.Location = new System.Drawing.Point(255, 40);
+            this.nudAdet.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudAdet.Name = "nudAdet";
             this.nudAdet.Size = new System.Drawing.Size(148, 34);
             this.nudAdet.TabIndex = 3;
+            this.nudAdet.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnDetayEkle
             // 
@@ -64,15 +74,21 @@ namespace BilgeKafe.UI
             this.btnDetayEkle.TabIndex = 4;
             this.btnDetayEkle.Text = "EKLE";
             this.btnDetayEkle.UseVisualStyleBackColor = true;
+            this.btnDetayEkle.Click += new System.EventHandler(this.btnDetayEkle_Click);
             // 
             // dgvSiparisDetaylari
             // 
+            this.dgvSiparisDetaylari.AllowUserToAddRows = false;
+            this.dgvSiparisDetaylari.AllowUserToDeleteRows = false;
             this.dgvSiparisDetaylari.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvSiparisDetaylari.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSiparisDetaylari.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSiparisDetaylari.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSiparisDetaylari.Location = new System.Drawing.Point(15, 87);
             this.dgvSiparisDetaylari.Name = "dgvSiparisDetaylari";
+            this.dgvSiparisDetaylari.ReadOnly = true;
             this.dgvSiparisDetaylari.RowHeadersWidth = 51;
             this.dgvSiparisDetaylari.Size = new System.Drawing.Size(556, 530);
             this.dgvSiparisDetaylari.TabIndex = 5;
@@ -83,7 +99,7 @@ namespace BilgeKafe.UI
             this.btnMasaTasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnMasaTasi.Location = new System.Drawing.Point(806, 40);
             this.btnMasaTasi.Name = "btnMasaTasi";
-            this.btnMasaTasi.Size = new System.Drawing.Size(119, 38);
+            this.btnMasaTasi.Size = new System.Drawing.Size(119, 34);
             this.btnMasaTasi.TabIndex = 7;
             this.btnMasaTasi.Text = "TAŞI";
             this.btnMasaTasi.UseVisualStyleBackColor = true;
