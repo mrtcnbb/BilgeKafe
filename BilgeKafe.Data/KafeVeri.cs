@@ -8,9 +8,9 @@ namespace BilgeKafe.Data
 {
     public class KafeVeri
     {
-        public int MasaAdet { get; set; }
-        public List<Urun> Urunler { get; set; }
-        public List<Siparis> AktifSiparisler { get; set; }
-        public List<Siparis> GecmisSiparisler { get; set; }
+        public int MasaAdet { get; set; } = 20; // default olarak giriyoruz
+        public List<Urun> Urunler { get; set; } = new List<Urun>();
+        public List<Siparis> AktifSiparisler { get; set; } = new List<Siparis>();
+        public List<Siparis> GecmisSiparisler { get; set; } = new List<Siparis>();
     }
 }

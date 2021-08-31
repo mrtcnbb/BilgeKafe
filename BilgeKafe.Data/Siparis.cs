@@ -9,12 +9,14 @@ namespace BilgeKafe.Data
     public class Siparis
     {
         public int MasaNo { get; set; }
-        public decimal OdeneneTutar { get; set; }
         public DateTime? AcilisZamani { get; set; } = DateTime.Now;
         public DateTime? KapanisZamani { get; set; }
-        public List<SiparisDetay> SiparisDetaylar { get; set; }
+        public SiparisDurum Durum { get; set; } = SiparisDurum.Aktif;
+        public decimal OdeneneTutar { get; set; }
+        public List<SiparisDetay> SiparisDetaylar { get; set; } = new List<SiparisDetay>(); // burada new oluştutulmazsa aşağıdaki linq metodu hata verir, null olmamalı o yüzden.
         public string ToplamTuatarTl { get; }
 
+        //public decimal ToplamTutar() => SiparisDetaylar.Sum(sd => sd.Tutar()); -----> Aşağğıdaki metodun muadili
         public decimal ToplamTutar()
         {
             return SiparisDetaylar.Sum(x => x.Tutar());
