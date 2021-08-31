@@ -16,10 +16,10 @@ namespace BilgeKafe.Data
         public List<SiparisDetay> SiparisDetaylar { get; set; } = new List<SiparisDetay>(); // burada new oluştutulmazsa aşağıdaki linq metodu hata verir, null olmamalı o yüzden.
         public string ToplamTuatarTl { get; }
 
-        //public decimal ToplamTutar() => SiparisDetaylar.Sum(sd => sd.Tutar()); -----> Aşağğıdaki metodun muadili
-        public decimal ToplamTutar()
-        {
-            return SiparisDetaylar.Sum(x => x.Tutar());
+        public decimal ToplamTutar() => SiparisDetaylar.Sum(sd => sd.Tutar());
+        //public decimal ToplamTutar()   -----> yukarıdaki metodun uzun hali
+        //{
+        //    return SiparisDetaylar.Sum(x => x.Tutar());
 
             //decimal toplam = 0;
             //foreach (SiparisDetay detay in SiparisDetaylar)
@@ -27,6 +27,6 @@ namespace BilgeKafe.Data
             //    toplam += detay.Tutar();
             //}
             //return toplam;
-        }
+        //}
     }
 }
