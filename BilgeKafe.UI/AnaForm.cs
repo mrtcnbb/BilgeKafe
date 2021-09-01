@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BilgeKafe.UI.Properties;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace BilgeKafe.UI
 {
@@ -17,9 +19,24 @@ namespace BilgeKafe.UI
         KafeVeri db = new KafeVeri();
         public AnaForm()
         {
-            OrnekUrunleriOlustur();
+            VerileriOku();
+            //OrnekUrunleriOlustur();
             InitializeComponent();
             MasalariOlustur();
+        }
+
+        private void VerileriOku()
+        {
+            try
+            {
+                string json = File.ReadAllText("veri.json"); // DİSKTEN OKUMA
+                db = JsonConvert.DeserializeObject<KafeVeri>(json); // JSON DESERILIZATION
+            }
+            catch (Exception)
+            {
+
+                
+            }
         }
 
         private void OrnekUrunleriOlustur()
@@ -42,7 +59,7 @@ namespace BilgeKafe.UI
             {
                 ListViewItem lvi = new ListViewItem($"Masa {i}");
                 lvi.Tag = i;
-                lvi.ImageKey = "bos";
+                lvi.ImageKey = db.AktifSiparisler.Any(s => s.MasaNo == i) ? "dolu" : "bos";
                 lvwMasalar.Items.Add(lvi);
             }
         }
@@ -84,6 +101,12 @@ namespace BilgeKafe.UI
         private void tsmiUrunler_Click(object sender, EventArgs e)
         {
             new UrunlerForm(db).ShowDialog();
+        }
+
+        private void AnaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            string json = JsonConvert.SerializeObject(db); // JSON SERILIZATION
+            File.WriteAllText("veri.json", json); // DİSKE YAZILMASI
         }
     }
 }

@@ -87,6 +87,7 @@ namespace BilgeKafe.UI
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnaForm";
             this.Text = "Bilge Kafe";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
