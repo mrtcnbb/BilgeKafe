@@ -48,7 +48,6 @@ namespace BilgeKafe.UI
             this.lvwMasalar.Size = new System.Drawing.Size(788, 504);
             this.lvwMasalar.TabIndex = 0;
             this.lvwMasalar.UseCompatibleStateImageBehavior = false;
-            
             this.lvwMasalar.DoubleClick += new System.EventHandler(this.lvwMasalar_DoubleClick);
             // 
             // menuStrip1
@@ -74,6 +73,7 @@ namespace BilgeKafe.UI
             this.tsmiGecmisSiparisler.Name = "tsmiGecmisSiparisler";
             this.tsmiGecmisSiparisler.Size = new System.Drawing.Size(136, 24);
             this.tsmiGecmisSiparisler.Text = "Geçmiş Siparişler";
+            this.tsmiGecmisSiparisler.Click += new System.EventHandler(this.tsmiGecmisSiparisler_Click);
             // 
             // AnaForm
             // 
