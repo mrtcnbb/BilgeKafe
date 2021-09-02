@@ -13,6 +13,8 @@ namespace BilgeKafe.UI
 {
     public partial class SiparisForm : Form
     {
+        public event EventHandler<MasaTasindiEvenArgs> MasaTasindi;
+
         private readonly KafeVeri db;
         private readonly Siparis siparis;
         private readonly BindingList<SiparisDetay> blSiparisDetaylar;
@@ -28,9 +30,24 @@ namespace BilgeKafe.UI
             dgvSiparisDetaylari.DataSource = blSiparisDetaylar;
             UrunleriListele();
             MasaNoyuGuncelle();
+            MasaNolariListele();
             blSiparisDetaylar.ResetBindings();
             
 
+        }
+
+        private void MasaNolariListele()
+        {
+            cboMasaNo.DataSource = Enumerable.Range(1, 20).Where(i => !db.AktifSiparisler.Any(s => s.MasaNo == i)).ToList();
+            //cboMasaNo.Items.Clear();
+            //for (int i = 0; i < db.MasaAdet; i++)
+            //{
+            //    if (db.AktifSiparisler.Any(s => s.MasaNo == i))
+            //    {
+            //        cboMasaNo.Items.Add(i);
+            //    }
+
+            //}
         }
 
         // bindinglist üzerinde değişiklik yapıldığında 
@@ -112,5 +129,25 @@ namespace BilgeKafe.UI
             Close();
         }
 
+        private void btnMasaTasi_Click(object sender, EventArgs e)
+        {
+            int eskiMasaNo = siparis.MasaNo;
+            int yeniMasaNo = (int)cboMasaNo.SelectedItem;
+            siparis.MasaNo = yeniMasaNo;
+            MasaNoyuGuncelle();
+            MasaNolariListele();
+
+            MasaTasindiEvenArgs args = new MasaTasindiEvenArgs()
+            {
+                EskiMasaNo = eskiMasaNo,
+                YeniMasaNo = yeniMasaNo
+            };
+
+
+            if (MasaTasindi != null)
+            {
+                MasaTasindi(this, args);
+            }
+        }
     }
 }
