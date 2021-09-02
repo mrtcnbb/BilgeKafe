@@ -45,7 +45,7 @@ namespace BilgeKafe.UI
             this.lvwMasalar.Location = new System.Drawing.Point(0, 33);
             this.lvwMasalar.Margin = new System.Windows.Forms.Padding(4);
             this.lvwMasalar.Name = "lvwMasalar";
-            this.lvwMasalar.Size = new System.Drawing.Size(788, 504);
+            this.lvwMasalar.Size = new System.Drawing.Size(984, 754);
             this.lvwMasalar.TabIndex = 0;
             this.lvwMasalar.UseCompatibleStateImageBehavior = false;
             this.lvwMasalar.DoubleClick += new System.EventHandler(this.lvwMasalar_DoubleClick);
@@ -58,7 +58,7 @@ namespace BilgeKafe.UI
             this.tsmiGecmisSiparisler});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(790, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(986, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,12 +80,13 @@ namespace BilgeKafe.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 539);
+            this.ClientSize = new System.Drawing.Size(986, 789);
             this.Controls.Add(this.lvwMasalar);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AnaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bilge Kafe";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);

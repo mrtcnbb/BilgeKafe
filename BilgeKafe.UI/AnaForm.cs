@@ -35,7 +35,6 @@ namespace BilgeKafe.UI
             catch (Exception)
             {
 
-                
             }
         }
 
