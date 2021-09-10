@@ -8,6 +8,7 @@ namespace BilgeKafe.Data
 {
     public class Siparis
     {
+        // Bu class Siparişleri tutuyor
         public int MasaNo { get; set; }
         public DateTime? AcilisZamani { get; set; } = DateTime.Now;
         public DateTime? KapanisZamani { get; set; }
