@@ -42,7 +42,7 @@ namespace BilgeKafe.UI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lvwMasalar.HideSelection = false;
-            this.lvwMasalar.Location = new System.Drawing.Point(0, 33);
+            this.lvwMasalar.Location = new System.Drawing.Point(13, 32);
             this.lvwMasalar.Margin = new System.Windows.Forms.Padding(4);
             this.lvwMasalar.Name = "lvwMasalar";
             this.lvwMasalar.Size = new System.Drawing.Size(984, 754);
@@ -88,7 +88,6 @@ namespace BilgeKafe.UI
             this.Name = "AnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bilge Kafe";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnaForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

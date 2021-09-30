@@ -104,6 +104,7 @@ namespace BilgeKafe.UI
             this.dgvSiparisDetaylari.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSiparisDetaylari.Size = new System.Drawing.Size(556, 530);
             this.dgvSiparisDetaylari.TabIndex = 5;
+            this.dgvSiparisDetaylari.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dgvSiparisDetaylari_UserDeletingRow);
             // 
             // Column1
             // 
@@ -143,9 +144,9 @@ namespace BilgeKafe.UI
             // 
             this.btnMasaTasi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMasaTasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMasaTasi.Location = new System.Drawing.Point(794, 40);
+            this.btnMasaTasi.Location = new System.Drawing.Point(806, 40);
             this.btnMasaTasi.Name = "btnMasaTasi";
-            this.btnMasaTasi.Size = new System.Drawing.Size(119, 34);
+            this.btnMasaTasi.Size = new System.Drawing.Size(119, 37);
             this.btnMasaTasi.TabIndex = 7;
             this.btnMasaTasi.Text = "TAŞI";
             this.btnMasaTasi.UseVisualStyleBackColor = true;
@@ -274,7 +275,7 @@ namespace BilgeKafe.UI
             this.cboMasaNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboMasaNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMasaNo.FormattingEnabled = true;
-            this.cboMasaNo.Location = new System.Drawing.Point(645, 40);
+            this.cboMasaNo.Location = new System.Drawing.Point(657, 40);
             this.cboMasaNo.Name = "cboMasaNo";
             this.cboMasaNo.Size = new System.Drawing.Size(143, 37);
             this.cboMasaNo.TabIndex = 15;
